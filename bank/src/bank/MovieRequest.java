@@ -17,6 +17,7 @@ public class MovieRequest {
 	public static void main(String[] args) {
 
 		String strUrl = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=12664b24453335d2c3eca0fdc4b3b013&targetDt=20201202";
+		String strUrl2 = "";
 		String response = MyRequest.get(strUrl);
 		
 		///////gson
@@ -48,6 +49,7 @@ public class MovieRequest {
 			System.out.println(temp.getString("movieNm"));
 		}
 		obj2.getString("showRange");	//안3.
+
 	}
 
 }
