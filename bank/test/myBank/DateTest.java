@@ -1,5 +1,6 @@
 package myBank;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Period;
@@ -12,10 +13,20 @@ public class DateTest {
 
 		// 은행 API사용시 난수 값으로 많이 사용된다.
 		Date today = new Date();
+		System.out.println("today: " +today);
+		SimpleDateFormat dateformat = new SimpleDateFormat("yyyyMMddHHmmss");
+		String formatStr = dateformat.format(today);
+		System.err.println("포맷 : " + formatStr);
+		
 		long ldate = today.getTime();
 		System.out.println(ldate);
 		long cdate = System.currentTimeMillis();
+		String cdateStr = Long.toString(cdate);
 		System.out.println(cdate);
+		System.out.println(cdateStr);
+		String randNine = cdateStr.substring(cdateStr.length()-9, cdateStr.length());
+		System.out.println(randNine);
+		
 
 		Calendar cal = Calendar.getInstance();
 		System.out.println(cal);
@@ -34,6 +45,7 @@ public class DateTest {
 		
 		//시간계산
 		LocalTime lt = LocalTime.now();
+		System.out.println("현재시각 : " + lt);
 		System.out.println("100분뒤: " + lt.plusMinutes(100));
 		
 		//두 날짜,시간 사이 간격 계산: period
