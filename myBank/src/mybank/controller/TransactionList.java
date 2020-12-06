@@ -32,7 +32,7 @@ public class TransactionList extends HttpServlet {
 		String randNine = randIdStr.substring(randIdStr.length()-9, randIdStr.length());
 		
 		Date today = new Date();
-		SimpleDateFormat dateformat = new SimpleDateFormat("yyyymmddhhmmss");
+		SimpleDateFormat dateformat = new SimpleDateFormat("yyyyMMddHHmmss");
 		String formatStr = dateformat.format(today);
 		
 		//잔액조회
