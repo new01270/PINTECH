@@ -20,8 +20,9 @@ public class Callback extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		//redirect_uri 에 있는 코드
 		String code = request.getParameter("code"); // 오픈뱅킹에서 휴대폰인증 후 임시토큰을 받음.->access토큰을 받아올 수 있음.
-		System.out.println(code);
+		System.out.println("code : " + code);
 
 		// access token 발급받기
 		String result = OpenBank.getAccessToken(code);

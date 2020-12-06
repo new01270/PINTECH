@@ -71,7 +71,7 @@ public class OpenBank {
 	}
 
 	// API 명세서_등록계좌조회 API_메서드
-	public static String getAccountList(String user_seq_no, String access_token) { // 세션에있는 값.
+	public static String getAccountList(String user_seq_no, String access_token) { 
 
 		final List<NameValuePair> postParams = new ArrayList<NameValuePair>();
 		postParams.add(new BasicNameValuePair("user_seq_no", user_seq_no));
@@ -107,11 +107,10 @@ public class OpenBank {
 	}
 
 	// API 명세서_거래내역조회 API_메서드
-	public static String getTransactionList(TransactionReqVO vo) {
-		
-		
+	public static String getTransactionList(TransactionReqVO vo) {		
 		
 		final List<NameValuePair> postParams = new ArrayList<NameValuePair>();
+		
 		postParams.add(new BasicNameValuePair("bank_tran_id", vo.getBank_tran_id()));
 		postParams.add(new BasicNameValuePair("fintech_use_num", vo.getFintech_use_num()));
 		postParams.add(new BasicNameValuePair("inquiry_type", vo.getInquiry_type()));

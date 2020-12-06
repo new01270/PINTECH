@@ -32,10 +32,9 @@ public class GetAccountList extends HttpServlet {
 		Gson gson = new Gson();
 		AccountList accountList = gson.fromJson(result, AccountList.class); // result값을 AccountList형식에 맞게 변환.
 		request.setAttribute("account_list", accountList.get_res_list());	
-		// Account값만  "account_list"에 담아 보낸다.->jsp에 보내는 EL안의 파라미터명.
+		// Account값만 "account_list"에 담아 보낸다.->jsp에 보내는 EL 파라미터명.
 		
-		request.getRequestDispatcher("accountList.jsp").forward(request, response);		
-		
+		request.getRequestDispatcher("accountList.jsp").forward(request, response);				
 
 	}
 
