@@ -1,6 +1,5 @@
 package bank;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,7 +22,9 @@ public class EmpRequest3 {
 		Gson gson = new Gson();
 
 		EmpVO2[] list = gson.fromJson(response, EmpVO2[].class);
-		List<EmpVO2> list2 = Arrays.asList(list); // gson.fromJson( response, new TokenType<List<EmpVO2>> () {}.getType() );
+		List<EmpVO2> list2 = Arrays.asList(list); 
+		// 일반 배열을 ArrayList로 바꿔야 할 때는 Arrays.asList()를 사용
+		// gson.fromJson( response, new TokenType<List<EmpVO2>> () {}.getType() );
 
 		for (EmpVO2 emp : list) {
 			System.out.println(emp.addr);

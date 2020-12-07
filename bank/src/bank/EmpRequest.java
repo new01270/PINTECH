@@ -23,7 +23,8 @@ public class EmpRequest {
 		/*
 		 * 메서드를 만들지 않고 바로 사용. EmpList list = gson.fromJson(response, EmpList.class);
 		 * 
-		 * ArrayList<EmpVO> emplist = list.empList; for(EmpVO i : emplist) {
+		 * ArrayList<EmpVO> emplist = list.empList; 
+		 * for(EmpVO i : emplist) {
 		 * System.out.println(i.age); }
 		 */
 

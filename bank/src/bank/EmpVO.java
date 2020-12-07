@@ -2,11 +2,13 @@ package bank;
 
 public class EmpVO {
 	/*
-	 * empList2 { "empList" : [ {"name":"scott", "age":20, "addr":"대구"},
+	 * empList1
+	 * { "empList" : [ {"name":"scott", "age":20, "addr":"대구"},
 	 * {"name":"king", "age":25, "addr":"서울"}, {"name":"steven", "age":30,
 	 * "addr":"부산"} ] }
 	 * 
-	 * empList3 [ {"name":"scott", "age":20, "addr":"대구"}, {"name":"king", "age":25,
+	 * empList3
+	 * [ {"name":"scott", "age":20, "addr":"대구"}, {"name":"king", "age":25,
 	 * "addr":"서울"}, {"name":"steven", "age":30, "addr":"부산"} ]
 	 */
 	
