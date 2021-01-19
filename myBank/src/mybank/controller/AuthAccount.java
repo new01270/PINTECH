@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//API 명세서_계좌등록 API(p18)
+//API 명세서_계좌등록확인 API(p18)
 
 @WebServlet("/AuthAccount")
 public class AuthAccount extends HttpServlet {
