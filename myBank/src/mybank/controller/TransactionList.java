@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 import mybank.model.TransactionListVO;
 import mybank.model.TransactionReqVO;
 
-//API 명세서_거래내역조회 API_서블릿
+//API 명세서_거래내역조회 API_서블릿(50p)
 
 @WebServlet("/TransactionList")
 public class TransactionList extends HttpServlet {

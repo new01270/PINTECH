@@ -20,9 +20,17 @@ import org.apache.http.message.BasicNameValuePair;
 
 import mybank.model.TransactionReqVO;
 
-public class OpenBank {
+/*--------------------------------------------
+API_명세서_토큰발급 API(9p)
+1. getAccessToken() 처리 -> 토큰,리토큰,사용자일련번호 받아옴 
 
-	// API 명세서_토큰발급 API -> 오픈뱅킹으로 넘겨줄 파라미터값.
+API_명세서_등록계좌조회 API(32p)
+1. getAccountList() 처리 -> 계좌리스트 받아옴
+2. GetAccountList.java 에서 컨트롤
+-------------------------------------------*/
+
+public class OpenBank {
+	
 	public static String getAccessToken(String code) {
 
 		final String strUrl = "https://testapi.openbanking.or.kr/oauth/2.0/token"; // Host

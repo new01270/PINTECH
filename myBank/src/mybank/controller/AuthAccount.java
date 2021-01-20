@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//API 명세서_계좌등록확인 API(p18)
+/*--------------------------------------------
+API 명세서_계좌등록확인 API(p18)
+1.response code -> redirect_uri CallBack.java
+-------------------------------------------*/
 
 @WebServlet("/AuthAccount")
 public class AuthAccount extends HttpServlet {
@@ -39,5 +42,11 @@ public class AuthAccount extends HttpServlet {
 
 	}
 
+// 인증 후
+	
+	/*아래와 같이 서수연님의 계좌가 등록되어 있습니다.
+	아래 계좌에 대해서 서수연의 TestAPP 서비스가 출금/조회을(를) 이용하는데 동의하시겠습니까?*/
+
+			
 	
 }

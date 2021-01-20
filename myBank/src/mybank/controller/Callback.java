@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.sf.json.JSONObject;
 
+/*--------------------------------------------
+ 1.받아온 코드로 OpenBank의 getAccessToken(code)넘겨줌
+ 2.토큰, 리토큰, 사용자일련번호 세션에 저장
+ 3.authAccount.jsp 로 출력
+ -------------------------------------------*/
+
 @WebServlet("/Callback")
 public class Callback extends HttpServlet {
 	private static final long serialVersionUID = 1L;
