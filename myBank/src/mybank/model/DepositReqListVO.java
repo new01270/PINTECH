@@ -1,6 +1,6 @@
 package mybank.model;
 
-public class WithDrawReqListVO {
+public class DepositReqListVO {
 	String tran_no;
 	String bank_tran_id;
 	String fintech_use_num;

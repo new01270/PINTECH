@@ -1,84 +1,83 @@
 package mybank.model;
 
-import java.util.ArrayList;
-
 public class WithDrawReqVO {
+	String bank_tran_id;
 	String cntr_account_type;
 	String cntr_account_num;
-	String wd_pass_phrase;
-	String wd_print_content;
-	String name_check_option;
+	String dps_print_content;
+	String fintech_use_num;
+	String tran_amt;
 	String tran_dtime;
-	String req_cnt;
-
-	ArrayList<WithDrawReqListVO> req_list;
+	String req_client_name;
+	String req_client_num;
+	String transfer_purpose;
+	String access_token;
 	
-	public ArrayList<WithDrawReqListVO> get_res_list() {
-		return req_list;
+	public String getAccess_token() {
+		return access_token;
 	}
-
+	public void setAccess_token(String access_token) {
+		this.access_token = access_token;
+	}
+	public String getBank_tran_id() {
+		return bank_tran_id;
+	}
+	public void setBank_tran_id(String bank_tran_id) {
+		this.bank_tran_id = bank_tran_id;
+	}
 	public String getCntr_account_type() {
 		return cntr_account_type;
 	}
-
 	public void setCntr_account_type(String cntr_account_type) {
 		this.cntr_account_type = cntr_account_type;
 	}
-
 	public String getCntr_account_num() {
 		return cntr_account_num;
 	}
-
 	public void setCntr_account_num(String cntr_account_num) {
 		this.cntr_account_num = cntr_account_num;
 	}
-
-	public String getWd_pass_phrase() {
-		return wd_pass_phrase;
+	public String getDps_print_content() {
+		return dps_print_content;
 	}
-
-	public void setWd_pass_phrase(String wd_pass_phrase) {
-		this.wd_pass_phrase = wd_pass_phrase;
+	public void setDps_print_content(String dps_print_content) {
+		this.dps_print_content = dps_print_content;
 	}
-
-	public String getWd_print_content() {
-		return wd_print_content;
+	public String getFintech_use_num() {
+		return fintech_use_num;
 	}
-
-	public void setWd_print_content(String wd_print_content) {
-		this.wd_print_content = wd_print_content;
+	public void setFintech_use_num(String fintech_use_num) {
+		this.fintech_use_num = fintech_use_num;
 	}
-
-	public String getName_check_option() {
-		return name_check_option;
+	public String getTran_amt() {
+		return tran_amt;
 	}
-
-	public void setName_check_option(String name_check_option) {
-		this.name_check_option = name_check_option;
+	public void setTran_amt(String tran_amt) {
+		this.tran_amt = tran_amt;
 	}
-
 	public String getTran_dtime() {
 		return tran_dtime;
 	}
-
 	public void setTran_dtime(String tran_dtime) {
 		this.tran_dtime = tran_dtime;
 	}
-
-	public String getReq_cnt() {
-		return req_cnt;
+	public String getReq_client_name() {
+		return req_client_name;
 	}
-
-	public void setReq_cnt(String req_cnt) {
-		this.req_cnt = req_cnt;
+	public void setReq_client_name(String req_client_name) {
+		this.req_client_name = req_client_name;
 	}
-
-	public ArrayList<WithDrawReqListVO> getReq_list() {
-		return req_list;
+	public String getReq_client_num() {
+		return req_client_num;
 	}
-
-	public void setReq_list(ArrayList<WithDrawReqListVO> req_list) {
-		this.req_list = req_list;
+	public void setReq_client_num(String req_client_num) {
+		this.req_client_num = req_client_num;
+	}
+	public String getTransfer_purpose() {
+		return transfer_purpose;
+	}
+	public void setTransfer_purpose(String transfer_purpose) {
+		this.transfer_purpose = transfer_purpose;
 	}
 	
 	
