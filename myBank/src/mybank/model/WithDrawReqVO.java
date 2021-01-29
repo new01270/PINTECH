@@ -12,7 +12,21 @@ public class WithDrawReqVO {
 	String req_client_num;
 	String transfer_purpose;
 	String access_token;
+	String req_client_account_num; //요청고객계좌번호
+	String req_client_fintech_use_num; // 요청고객핀테크이용번호
 	
+	public String getReq_client_fintech_use_num() {
+		return req_client_fintech_use_num;
+	}
+	public void setReq_client_fintech_use_num(String req_client_fintech_use_num) {
+		this.req_client_fintech_use_num = req_client_fintech_use_num;
+	}
+	public String getReq_client_account_num() {
+		return req_client_account_num;
+	}
+	public void setReq_client_account_num(String req_client_account_num) {
+		this.req_client_account_num = req_client_account_num;
+	}
 	public String getAccess_token() {
 		return access_token;
 	}

@@ -1,5 +1,7 @@
 package mybank.model;
 
+// response list
+
 public class TransactionVO {
 	String tran_date;
 	String tran_time;

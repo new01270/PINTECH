@@ -18,6 +18,8 @@ import org.apache.catalina.Session;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
+import com.google.gson.Gson;
+
 import mybank.model.DepositReqListVO;
 import mybank.model.DepositReqVO;
 import mybank.model.TransactionReqVO;
@@ -137,7 +139,7 @@ public class OpenBank {
 		postParams.add(new BasicNameValuePair("access_token", vo.getAccess_token()));
 
 		StringBuilder sb = new StringBuilder();
-		
+
 		try {
 			String querystr = getQuery(postParams);
 			String strUrl = "https://testapi.openbanking.or.kr/v2.0/account/transaction_list/fin_num" + "?" + querystr;
@@ -164,32 +166,28 @@ public class OpenBank {
 
 		return sb.toString();
 	}
-	
-	// 출금이체
+
+	// 출금이체 post
 	public static String getWithDraw(WithDrawReqVO vo) {
-		
-		final List<NameValuePair> postParams = new ArrayList<NameValuePair>();
-		
-		postParams.add(new BasicNameValuePair("bank_tran_id", vo.getBank_tran_id()));
-		postParams.add(new BasicNameValuePair("cntr_account_type", vo.getCntr_account_type()));
-		postParams.add(new BasicNameValuePair("cntr_account_num", vo.getCntr_account_num()));
-		postParams.add(new BasicNameValuePair("dps_print_content", vo.getDps_print_content()));
-		postParams.add(new BasicNameValuePair("fintech_use_num", vo.getFintech_use_num()));
-		postParams.add(new BasicNameValuePair("tran_amt", vo.getTran_amt()));
-		postParams.add(new BasicNameValuePair("tran_dtime", vo.getTran_dtime()));
-		postParams.add(new BasicNameValuePair("req_client_name", vo.getReq_client_name()));
-		postParams.add(new BasicNameValuePair("req_client_num", vo.getReq_client_num()));
-		postParams.add(new BasicNameValuePair("transfer_purpose", vo.getTransfer_purpose()));
-		postParams.add(new BasicNameValuePair("access_token", vo.getAccess_token()));
-		
+
 		StringBuilder sb = new StringBuilder();
-		
+
 		try {
-			String querystr = getQuery(postParams);
-			String strUrl = "https://testapi.openapi.openbanking.or.kr/v2.0/transfer/withdraw/fin_num" + "?" + querystr;
+			String strUrl = "https://testapi.openbanking.or.kr/v2.0/transfer/withdraw/fin_num";
 			URL url = new URL(strUrl);
+
+			Gson gson = new Gson();
+			String query = gson.toJson(vo);
+
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.addRequestProperty("Authorization", "Bearer" + vo.getAccess_token());
+			con.setRequestMethod("POST");
+			con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+			con.setRequestProperty("Content-Length", String.valueOf(query.length()));
+			con.setDoOutput(true);
+			
+			byte[] input = query.getBytes("utf-8");
+			con.getOutputStream().write(input);
 
 			// JSON 형태 반환값 처리
 			if (con.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -207,33 +205,31 @@ public class OpenBank {
 			e.printStackTrace();
 		} finally {
 		}
-		
+
 		return sb.toString();
 	}
-	
-	// 입금이체
+
+	// 입금이체 POST
 	public static String getDeposit(DepositReqVO vo) {
-		
-		final List<NameValuePair> postParams = new ArrayList<NameValuePair>();
-		
-		postParams.add(new BasicNameValuePair("cntr_account_type", vo.getCntr_account_type()));
-		postParams.add(new BasicNameValuePair("cntr_account_num", vo.getCntr_account_num()));
-		postParams.add(new BasicNameValuePair("wd_pass_phrase", vo.getWd_pass_phrase()));
-		postParams.add(new BasicNameValuePair("wd_print_content", vo.getWd_print_content()));
-		postParams.add(new BasicNameValuePair("name_check_option", vo.getName_check_option()));
-		postParams.add(new BasicNameValuePair("tran_dtime", vo.getTran_dtime()));
-		postParams.add(new BasicNameValuePair("req_cnt", vo.getReq_cnt()));
-		postParams.add(new BasicNameValuePair("cntr_account_type", vo.getCntr_account_type()));
-		//req_list 받아오는방법?
-		
+
 		StringBuilder sb = new StringBuilder();
-		
+
 		try {
-			String querystr = getQuery(postParams);
-			String strUrl = "https://testapi.openapi.openbanking.or.kr/v2.0/transfer/deposit/fin_num" + "?" + querystr;
+			String strUrl = "https://testapi.openbanking.or.kr/v2.0/transfer/deposit/fin_num";
+
+			Gson gson = new Gson();
+			String query = gson.toJson(vo);
+
 			URL url = new URL(strUrl);
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.addRequestProperty("Authorization", "Bearer" + vo.getAccess_token());
+			con.setRequestMethod("POST");
+			con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+			con.setRequestProperty("Content-Length", String.valueOf(query.length()));
+			con.setDoOutput(true);
+			
+			byte[] input = query.getBytes("utf-8");
+			con.getOutputStream().write(input);
 
 			// JSON 형태 반환값 처리
 			if (con.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -251,12 +247,10 @@ public class OpenBank {
 			e.printStackTrace();
 		} finally {
 		}
-		
+
 		return sb.toString();
-		
+
 	}
-	
-	
 
 	// &= 만들어주는 메서드
 	private static String getQuery(List<NameValuePair> params) throws UnsupportedEncodingException {

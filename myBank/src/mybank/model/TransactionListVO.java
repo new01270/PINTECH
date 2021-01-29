@@ -2,6 +2,7 @@ package mybank.model;
 
 import java.util.ArrayList;
 
+//response
 public class TransactionListVO {
 	String api_tran_id;
 	String api_tran_dtm;

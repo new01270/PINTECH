@@ -54,7 +54,8 @@
 			<br>
 			<ul>
 				<li><a href="#">로그인</a></li>
-				<li><a href="WithDraw">인출</a></li>
+				<li><a href="WithDraw">충전</a></li>
+				<li><a href="Deposit">인출</a></li>
 				<li><a href="AuthAccount">계좌등록</a></li>
 				<li><a href="GetAccountList">등록계좌조회(다른은행)</a></li>
 				<li><a href="TransactionList">거래내역조회</a></li>
